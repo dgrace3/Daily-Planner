@@ -60,11 +60,19 @@ function createPlannerRows(){
 
 }
  
+createPlannerRows()
+
 function clickSave() {
-    $(this).closest('textarea').text("is this thing on");
+    // $(this).closest('textarea').text("is this thing on");
+    console.log('is this thing on')
 }
 
-$('.saveBtn').click(clickSave())
 
 
-createPlannerRows()
+// $( '.container' ).on( 'click', 'button', function() {
+//     console.log( $( this ).closest('textarea').val() );
+//   });
+
+  $( '.container' ).on( 'click', 'button', function() {
+    console.log( $( this ).closest('textarea'));
+  });
