@@ -21,7 +21,7 @@ function createPlannerRows(){
         $timeText = $('<h4>').text(hours[i]);
         $timeDiv = $('<div>').addClass('col-1 hour').append($timeText);
 
-        $textBox = $('<textarea>').addClass('col-10 description').text('');
+        $textBox = $('<textarea>').addClass('col-10 description').text(localStorage.getItem(hours[i]));
 
         // $saveButton = $('<button>').html("Save");
         $saveDiv = $('<button>').addClass('col-1 saveBtn').html("Save");
@@ -30,7 +30,7 @@ function createPlannerRows(){
         
         if(hours[i]<moment().format('h a')) {
             $rowCreate.addClass('past')
-            $textBox.text("needs the past class")
+            // $textBox.text("needs the past class")
         }
         else if(hours[i]>moment().format('h a')) {
             $rowCreate.addClass('future')
@@ -62,10 +62,7 @@ function createPlannerRows(){
  
 createPlannerRows()
 
-function clickSave() {
-    // $(this).closest('textarea').text("is this thing on");
-    console.log('is this thing on')
-}
+
 
 
 
@@ -73,6 +70,15 @@ function clickSave() {
 //     console.log( $( this ).closest('textarea').val() );
 //   });
 
-  $( '.container' ).on( 'click', 'button', function() {
-    console.log( $( this ).closest('textarea'));
+//   $( '.container' ).on( 'click', 'button', function() {
+//     console.log( $( this ).closest('textarea'));
+//   });
+var textInput
+  $( 'button' ).click(function(event) {
+    textInput = (event.target.previousSibling.value);
+    timeRow = (event.target.previousSibling.previousSibling.firstChild.innerHTML)
+    // console.log(textInput);
+    // console.log(timeRow);
+    localStorage.setItem(timeRow, textInput);
+    console.log(localStorage.getItem(timeRow))
   });
