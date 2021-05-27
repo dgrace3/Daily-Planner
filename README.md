@@ -1,5 +1,5 @@
 # Daily-Planner
-This is a daily planner. It shows the current days schedule and allows you to add more events as needed. The input is then saved to local storage. If the site is refreshed, the input will still be there.
+This is a daily planner. It shows the current days schedule and allows you to add more events as needed. The input is then saved to local storage. If the site is refreshed, the input will still be there. The rows are color coded to indicate whether or not the current time is past the time displayed on the row, equal to the time, or before the time. The event planner rows are dynamically created when the website loads. 
 The code is deployed @:
 https://dgrace3.github.io/Daily-Planner/
 
